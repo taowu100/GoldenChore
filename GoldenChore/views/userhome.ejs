@@ -1,6 +1,9 @@
 <body>
 	
-	<h2>Welcome, <%= fnname %></h2>
+	<h2>Welcome, <%= fname %></h2>
+	<div>
+		<a href="/addnewrequest/user/<%= user_id %>?fname=<%= fname %>">Post A New Service Request</a>
+	</div>
 	<h2>List Of My Task:</h2>
 	<% if (postedsers.length > 0) { %>
 		<ul>

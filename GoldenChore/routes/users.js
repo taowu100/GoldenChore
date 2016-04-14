@@ -12,13 +12,13 @@ router.get('/:id', function(req, res) {
 	' WHERE s.poster_id ='+user_id+' AND u.user_id='+user_id+' AND s.type_id=t.type_id AND s.loc_id=l.loc_id;',
 	function(err, rows) {
 		if(err) throw err;
-		console.log(rows);
-		res.render('userhome', {fnname: fname, postedsers: rows, signees: "test3"});
+		// console.log(rows);
+		res.render('userhome', {fname: fname, postedsers: rows, user_id: user_id, signees: "test3"});
 	}
 
 	);
 
-  // res.render('userhome', {fnname: fname, postedser: "test2", signees: "test3"});
+  // res.render('userhome', {fname: fname, postedser: "test2", signees: "test3"});
 });
 
 module.exports = router;

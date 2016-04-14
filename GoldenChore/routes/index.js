@@ -93,7 +93,7 @@ router.post('/signup', function(req, res) {
                       // con.query('SELECT ser_id FROM ')
 
                       // And forward to success page
-                      // res.render('home', {fnname: first_name, user_id: user_id});
+                      // res.render('home', {fname: first_name, user_id: user_id});
                       res.redirect('/users/'+user_id+'?fname='+first_name);
 
                     }
