@@ -1,6 +1,10 @@
 # Golden Chore
 
-Golden Chore is a web-based application to match youung people and old people so that young people can help old people do chores.
+Golden Chore is a application to match youung people and old people so that young people can help old people do chores. It has both web and mobile ends.
+
+[link to homepage on the default setting](http://localhost:3000/home)
+
+[link to GitHub repository](https://github.com/taowu100/GoldenChore)
 
   - Type some Markdown on the left
   - See HTML in the right
@@ -121,14 +125,14 @@ Change the path for the nginx conf mounting path to your full path, not mine!
 
 ### Todos
 
- - Write Tests
- - Rethink Github Save
+ - Check signees for each request
+ - Password retrieval through email
+ - Delete a request
+ - More secure links
+ - Add login box in the index
  - Add Code Comments
- - Add Night Mode
 
 License
 ----
 
 MIT
-
-

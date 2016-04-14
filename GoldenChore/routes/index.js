@@ -34,13 +34,13 @@ router.post('/login', function(req, res) {
           }
           else {
             console.log('login fail');
-            req.flash('message', 'Failure! Please try again.');
+            req.flash('message', 'Your login attempt has failed. Please check that your email and password have been entered correctly.');
             res.redirect('/');
           }
         }
         else {
           console.log('login fail');
-          req.flash('message', 'Failure! Please try again.');
+          req.flash('message', 'Your login attempt has failed. Please check that your email and password have been entered correctly.');
           res.redirect('/');
         }
       }

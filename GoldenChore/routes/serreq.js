@@ -44,8 +44,8 @@ router.post('/postnew', function(req, res) {
           '\"'+ser_name+'\",\"'+ser_startingdate+'\",\"'+ser_endingdate+'\",\"'+ser_ava_startingtime+'\",\"'+ser_ava_endingtime+'\",\"'+hours_min+'\",\"'+hours_max+'\",\"'+ser_description+'\",\"'+type_id+'\",\"'+poster_id+'\",\"'+street_address+'\",\"'+loc_id+'\");',
             function(err) {
               if(err) throw err;
- 			  req.flash('message', 'The request is posted successfully!');
-			  res.redirect('/users/'+poster_id+'?fname='+fname);
+ 			        req.flash('message', 'The request is posted successfully!');
+			        res.redirect('/users/'+poster_id+'?fname='+fname);
         	});
         }
 
@@ -64,7 +64,7 @@ router.post('/postnew', function(req, res) {
             			function(err) {
             				if(err) throw err;
             				req.flash('message', 'The request is posted successfully!');
-							res.redirect('/users/'+poster_id+'?fname='+fname);
+							      res.redirect('/users/'+poster_id+'?fname='+fname);
             			});
                    
                 });
