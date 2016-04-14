@@ -1,19 +1,82 @@
-<html>
-	<head>
-		<!-- <link href="stylesheets/style.css" type="text/css" rel="stylesheet" /> -->
-	</head>
-	<body>
-		<h2>Login</h2>
-		<form method="POST" action="/login">
-			Email: <input type="text" placeholder="useremail" name="useremail" /><br />
-			Password: <input type="password" placeholder="password" name="password" /><br />
-			<input type="submit" value="Login" />
-			<a href="/newuser">Sign Up</a>
-		</form>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Golden Chore</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12" style="background-color:#9F8524;margin-top:30px;margin:0;height:15px">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row" style="margin-top:20px">
+            <div class="col-md-6">
+               <a href="#" class="btn pull-left" type="button">Golden Chore</a>
+            </div>
+            <div class="col-md-6">
+               <a href="#" class="btn pull-right" type="button">Login</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <h1 class="text-center">
+                GOLDEN CHORE
+              </h1>
+              <br/>
+              <p class="text-center">
+                Building a community by helping senior citizens
+              </p>
+              <br/>
+              <h3 style="margin:30px;">
+                LOGIN
+              </h3>
+              <form method="POST" action="/login" role="form" style="margin:30px;">
+                <div class="form-group">
+                  <label for="getServiceLabel" class="pull-left">
+                    Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  </label>
+                  <input type="text" class="pull-left" id="getService" placeholder="useremail" name="useremail" style="margin-left:10px;color:black;" />
+                </div>
+                <div class="form-group">
 
-		<% if ( expressFlash.length > 0 ) { %>
-  			<p>Message: <%= expressFlash %> !!!</p>
-		<% } %>
+                  <label for="giveServiceLabel" class="pull-left" style="clear:left;margin-top:10px">
+                    Password
+                  </label>
+                  <input type="password" class="pull-left" id="giveService" placeholder="password" name="password" style="margin-left:10px;margin-top:10px;color:black;" />
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <button type="submit" class="btn btn-default pull-left">
+                  Login
+                </button>
+                <a href="/newuser" class="btn pull-left" type="button">Sign Up</a>
+                <br/>
+                <br/>
+                <br/>
+                <% if ( expressFlash.length > 0 ) { %>
+                  <p style="clear:left;color: red;font-weight:bold"><%= expressFlash %></p>
+                <% } %>
+                <p class="hide" style="clear:left;color: red;font-weight:bold">Bad Login</p>
+              </form>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
 
-	</body>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
 </html>

@@ -1,0 +1,76 @@
+@media screen and (min-width: 550px) {
+    /*.carousel-indicators > li, .carousel-indicators > li.active {
+        width: 100px;
+        height: 25px;
+        border-radius: 0;
+        border: solid 1px grey;
+        background: lightgrey;
+        text-indent: 0;
+    }
+    .carousel-indicators > li.active {
+        background: white;
+    }*/
+}
+img.center {
+    display: block;
+    margin: 0 auto;
+}
+body{
+  background-color: #1A4366;
+  color: #fff;
+}
+h1 {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 54px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 100;
+	line-height: 26.4px;
+}
+h2 {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 44px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 100;
+	line-height: 26.4px;
+}
+h3 {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 34px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 100;
+	line-height: 15.4px;
+}
+p,h5,label {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 100;
+	line-height: 20px;
+}
+blockquote {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 21px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 100;
+	line-height: 30px;
+}
+pre {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 100;
+	line-height: 18.5714px;
+}
+a,h1,h3{
+  text-decoration: none;
+  color: #9F8524;
+}
+input[type="text"],input[type="email"] ,input[type="password"]  {
+    width: 200px;
+}
