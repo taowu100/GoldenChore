@@ -1,16 +1,19 @@
 <html>
 	<head>
-		<link href="assets/style.css" type="text/css" rel="stylesheet" />
+		<!-- <link href="assets/style.css" type="text/css" rel="stylesheet" /> -->
 	</head>
 	<body>
-		<h1>Hello world!</h1>
+		<h2>Login</h2>
 		<form method="POST" action="/login">
 			Email: <input type="text" placeholder="useremail" name="useremail" /><br />
 			Password: <input type="password" placeholder="password" name="password" /><br />
-			<input type="submit" value="Submit" />
-			<% if (message) { %>
-				<p><%= message %></p>
-			<% } %>
+			<input type="submit" value="Login" />
+			<a href="/newuser">Sign Up</a>
 		</form>
+
+		<% if ( expressFlash.length > 0 ) { %>
+  			<p>Message: <%= expressFlash %> !!!</p>
+		<% } %>
+
 	</body>
 </html>

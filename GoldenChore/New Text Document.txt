@@ -1,5 +1,0 @@
-home (login 
-	(if right---)
-	(if wrong)
-      signup
-	(after signup))
