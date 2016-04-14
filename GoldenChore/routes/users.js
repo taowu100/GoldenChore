@@ -12,7 +12,7 @@ router.get('/:id', function(req, res) {
 	' WHERE s.poster_id ='+user_id+' AND u.user_id='+user_id+' AND s.type_id=t.type_id AND s.loc_id=l.loc_id;',
 	function(err, rows) {
 		if(err) throw err;
-		// console.log(rows);
+		console.log(rows);
 		res.render('userhome', {fnname: fname, postedsers: rows, signees: "test3"});
 	}
 

@@ -2,23 +2,26 @@
 	
 	<h2>Welcome, <%= fnname %></h2>
 	<h2>List Of My Task:</h2>
+	<% if (postedsers.length > 0) { %>
+		<ul>
+			<% postedsers.forEach(function(postedser) { %>
+	        	<li>
+	        		<div>ser_name: <%= postedser.ser_name %></div>
+	        		<div>ser_startingdate - ser_endingdate: <%= postedser.ser_startingdate %> - <%= postedser.ser_endingdate %></div>
+	        		<div>ser_ava_startingtime - ser_ava_endingtime: <%= postedser.ser_ava_startingtime %> - <%= postedser.ser_ava_endingtime %></div>
+	        		<div>hours: <%= postedser.hours_min %> - <%= postedser.hours_max %></div>
+	        		<div>ser_description: <%= postedser.ser_description %></div>
 
-	<ul>
-		<% postedsers.forEach(function(postedser) { %>
-        	<li>
-        		<div>ser_name: <%= postedser.ser_name %></div>
-        		<div>ser_startingdate - ser_endingdate: <%= postedser.ser_startingdate %> - <%= postedser.ser_endingdate %></div>
-        		<div>ser_ava_startingtime - ser_ava_endingtime: <%= postedser.ser_ava_startingtime %> - <%= postedser.ser_ava_endingtime %></div>
-        		<div>hours: <%= postedser.hours_min %> - <%= postedser.hours_max %></div>
-        		<div>ser_description: <%= postedser.ser_description %></div>
+	        		<div>service type: <%= postedser.type %></div>
+	        		<div>poster name(f+l): <%= postedser.first_name %> <%= postedser.last_name %></div>
+	        		<div>service address: <%= postedser.street_address %>, <%= postedser.city %>, <%= postedser.state %> <%= postedser.zip_code %></div>
 
-        		<div>service type: <%= postedser.type %></div>
-        		<div>poster name(f+l): <%= postedser.first_name %> <%= postedser.last_name %></div>
-        		<div>service address: <%= postedser.street_address %>, <%= postedser.city %>, <%= postedser.state %> <%= postedser.zip_code %></div>
-
-        	</li>
-        	<br>
-    	<% }); %>
-	</ul>
+	        	</li>
+	        	<br>
+	    	<% }); %>
+		</ul>
+	<% } else { %>
+		<div>You didn't post any service.</div>
+	<% } %>
 
 </body>
