@@ -1,28 +1,114 @@
-<body>
-	<h1>Sign Up</h1>
-	<form id="formAddUser" name="adduser" method="post" action="/signup">
-		<input id="inputUserEmail" type="text" placeholder="email address" name="useremail">
-		<br>
-		<input id="inputUserPass" type="text" placeholder="password" name="password">
-        <br>
-        <input id="inputUserPassAgain" type="text" placeholder="password again" name="passwordagain">
-        <br>
-        <input id="inputUserFname" type="text" placeholder="first name" name="fname">
-        <br>
-        <input id="inputUserLname" type="text" placeholder="last name" name="lname">
-        <br>
-        <input id="inputUserPho" type="text" placeholder="phone number" name="phone">
-        <br>
-        <input id="inputUserDr" type="text" placeholder="driver license" name="driverlicense">
-        <br>
-        <input id="inputUserStr" type="text" placeholder="street address" name="street">
-        <br>
-        <input id="inputUserCity" type="text" placeholder="city" name="city">
-        <br>
-        <input id="inputUserState" type="text" placeholder="state" name="state">
-        <br>
-        <input id="inputUserZip" type="text" placeholder="zip code" name="zip_code">
-        <br>
-        <input id="btnSubmit" type="submit" value="Sign Up">
-	</form>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Golden Chore</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12" style="background-color:#9F8524;margin-top:30px;margin:0;height:15px">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row" style="margin-top:20px">
+            <div class="col-md-6">
+               <a href="/home" class="btn pull-left" type="button">Golden Chore</a>
+            </div>
+            <div class="col-md-6">
+               <!-- <a href="#" class="btn pull-right" type="button">Sign UP</a> -->
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <h1 class="text-center">
+                GOLDEN CHORE
+              </h1>
+              <br/>
+              <p class="text-center">
+                Building a community by helping senior citizens
+              </p>
+              <br/>
+              <h3 style="margin:30px;">
+                Sign Up
+              </h3>
+              <div class="col-md-5" style="margin-left:30px;">
+                <form id="formAddUser" name="adduser" method="post" action="/signup">
+                  <p>
+                    <label for="emailsignup" class="youmail pull-left" data-icon="e" > Your email</label>
+                    <input id="emailsignup" class="pull-right" name="useremail" required="required" type="email" placeholder="mysupermail@mail.com" style="color:black;" />
+                  </p>
+                  <br/><br/>
+                  <p>
+                    <label for="passwordsignup" class="youpasswd pull-left" data-icon="p">Your password </label>
+                    <input id="passwordsignup" class="pull-right" name="password" required="required" type="password" placeholder="eg. X8df!90EO" style="color:black;"/>
+                  </p>
+                  <br/><br/>
+                  <p>
+                    <label for="passwordsignup_confirm" class="youpasswd pull-left" data-icon="p">Please confirm your password </label>
+                    <input id="passwordsignup_confirm" class="pull-right" name="password_confirm" required="required" type="password" placeholder="eg. X8df!90EO" style="color:black;"/>
+                  </p>
+                  <br/><br/>
+                  <p>
+                    <label for="firstnamesignup" class="uname pull-left" data-icon="u">Your First Name</label>
+                    <input id="firstnamesignup" class="pull-right" name="fname" required="required" type="text" placeholder="John" style="color:black;" />
+                  </p>
+                  <br/><br/>
+                  <p>
+                    <label for="lastnamesignup" class="uname pull-left" data-icon="u">Your Last Name</label>
+                    <input id="lastnamesignup" class="pull-right" name="lname" required="required" type="text" placeholder="Doe" style="color:black;" />
+                  </p>
+                  <br/><br/>
+                  <p>
+                    <label for="phonesignup" class="uname pull-left" data-icon="u">Phone Number</label>
+                    <input id="phonesignup" class="pull-right" name="phone" required="required" type="text" placeholder="xxx-xxx-xxxx" style="color:black;" />
+                  </p>
+                  <br/><br/>
+                  <p>
+                    <label for="DLsignup" class="uname pull-left" data-icon="u">Driver's License Number</label>
+                    <input id="DLsignup" class="pull-right" name="driverlicense" required="required" type="text" placeholder="xxxx-xxx-xxxx" style="color:black;" />
+                  </p>
+                  <br/><br/>
+                  <p>
+                    <label for="streetsignup" class="uname pull-left" data-icon="u">Street Address</label>
+                    <input id="streetsignup" class="pull-right" name="street" required="required" type="text" placeholder="100 Main Street" style="color:black;" />
+                  </p>
+                  <br/><br/>
+                  <p>
+                    <label for="citysignup" class="uname pull-left" data-icon="u">City</label>
+                    <input id="citysignup" class="pull-right" name="city" required="required" type="text" placeholder="Ann Arbor" style="color:black;" />
+                  </p>
+                  <br/><br/>
+                  <p>
+                    <label for="statesignup" class="uname pull-left" data-icon="u">State</label>
+                    <input id="statesignup" class="pull-right" name="state" required="required" type="text" placeholder="MI" style="color:black;" />
+                  </p>
+                  <br/><br/>
+                  <p>
+                    <label for="zipsignup" class="uname pull-left" data-icon="u">State</label>
+                    <input id="zipsignup" class="pull-right" name="zip_code" required="required" type="text" placeholder="48109" style="color:black;" />
+                  </p>
+                  <br/><br/>
+                  <p class="signin button">
+                    <input type="submit" class="btn" value="Sign up"/>
+                    <a href="/" class="btn" type="button">Back</a>
+                  </p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

@@ -1,6 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
+/* GET home page. */
+router.get('/home', function(req, res, next) {
+  res.render('home');
+});
+
 /* GET index page. */
 router.get('/', function(req, res, next) {
   res.render('index', {expressFlash: req.flash('message') });
@@ -29,13 +34,13 @@ router.post('/login', function(req, res) {
           }
           else {
             console.log('login fail');
-            req.flash('message', 'Failure! Please try again.');
+            req.flash('message', 'Your login attempt has failed. Please check that your email and password have been entered correctly.');
             res.redirect('/');
           }
         }
         else {
           console.log('login fail');
-          req.flash('message', 'Failure! Please try again.');
+          req.flash('message', 'Your login attempt has failed. Please check that your email and password have been entered correctly.');
           res.redirect('/');
         }
       }
