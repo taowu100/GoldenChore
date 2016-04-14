@@ -1,0 +1,47 @@
+<body>
+	<h1>Hi, <%= fname %></h1>
+	<h1>post a new service request</h1>
+	
+
+	<form id="formAddReq" name="addrequest" method="post" action="/addnewrequest/postnew">
+		Service Name: <input id="inputReqName" type="text" placeholder="service name" name="ser_name">
+		<br>
+		Date and Time: 
+        <input id="inputReqStarDate" type="date" placeholder="starting date" name="ser_startingdate">
+        &nbsp;
+        <input id="inputReqStarTime" type="time" placeholder="starting time" name="ser_ava_startingtime">
+        --
+        <input id="inputReqEndDate" type="date" placeholder="ending date" name="ser_endingdate">
+        &nbsp;
+        <input id="inputReqEndTime" type="time" placeholder="ending time" name="ser_ava_endingtime">
+        <br>
+        Hours: 
+        <input id="inputHourMin" type="text" placeholder="min hours" name="hours_min">
+        --
+        <input id="inputHourMax" type="text" placeholder="max hours" name="hours_max">
+        <br>
+        Description:
+        <textarea rows="4" cols="50" placeholder="service description" name="ser_description"></textarea>
+        <br>
+        Service Type:
+        <select name="type_id">
+        	<% types.forEach(function(type) { %>
+            	<option value="<%= type.type_id %>"><%=  type.type %></option>
+            <% }); %>
+        </select>
+        <br>
+        Service Location:
+        <br>
+        Street: <input id="inputReqStreet" type="text" placeholder="street address" name="street_address">
+        <br>
+        City: <input id="inputReqName" type="text" placeholder="city" name="city">
+        <br>
+        State:  <input id="inputReqName" type="text" placeholder="state" name="state">
+        <br>
+        Zip code:  <input id="inputReqName" type="text" placeholder="zip code" name="zip_code">
+        <br>
+        <input type="hidden" name="user_id" value="<%= user_id %>">
+        <input type="hidden" name="fname" value="<%= fname %>">
+        <input id="btnSubmit" type="submit" value="Post">
+	</form>
+</body>

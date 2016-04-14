@@ -11,6 +11,7 @@ var flash = require('connect-flash');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var serreq = require('./routes/serreq');
 
 var app = express();
 
@@ -40,7 +41,7 @@ app.use(function (req, res, next) {
     host: "localhost",
     user: "root",
     password: "",
-    database: "test"
+    database: "goldenchore"
   });
   req.con = con;
   next();
@@ -48,6 +49,7 @@ app.use(function (req, res, next) {
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/addnewrequest', serreq);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
