@@ -1,0 +1,6 @@
+DROP TABLE Signsheet;
+DROP TABLE Service;
+DROP TABLE Type;
+DROP TABLE User_loc;
+DROP TABLE Location;
+DROP TABLE Users;

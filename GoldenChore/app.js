@@ -40,7 +40,7 @@ app.use(function (req, res, next) {
     host: "localhost",
     user: "root",
     password: "",
-    database: "test"
+    database: "goldenchore"
   });
   req.con = con;
   next();

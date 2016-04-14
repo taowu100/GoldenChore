@@ -6,24 +6,6 @@ router.get('/', function(req, res, next) {
   res.render('index', {expressFlash: req.flash('message') });
 });
 
-/* GET Home page */
-// router.get('/home', function(req, res) {
-//     res.render('home');
-// });
-
-/* GET Userlist page. */
-// router.get('/userlist', function(req, res) {
-//     var con = req.con;
-//     con.query('SELECT password, first_name, last_name, email FROM user',
-//       function(err, rows) {
-//         if(err) throw err;
-//         res.render('userlist', {
-//           "userlist" : rows
-//         });
-//       }
-//     );
-// });
-
 /* Login. */
 router.post('/login', function(req, res) {
 
@@ -35,14 +17,15 @@ router.post('/login', function(req, res) {
     var password = req.body.password;
 
     // Set our collection and submit to DB
-    con.query('SELECT first_name, password FROM users WHERE email=\"'+ useremail +'\";',
+    con.query('SELECT user_id, first_name, password FROM users WHERE email=\"'+ useremail +'\";',
       function(err, rows) {
         if(err) throw err;
         // And forward to success page
         if(rows[0]) {
           if(rows[0].password == password) {
             console.log('login succ');
-            res.render('home', {username: rows[0].first_name});
+            // res.render('home', {fnname: rows[0].first_name});
+            res.redirect('/users/'+rows[0].user_id+'?fname='+rows[0].first_name);
           }
           else {
             console.log('login fail');
@@ -100,12 +83,19 @@ router.post('/signup', function(req, res) {
                   // console.log(rows[0]);
                   // console.log(loc_id);
                   var first_name = rows[0].first_name;
-                  console.log('first_name: '+first_name);
-                  con.query('INSERT INTO user_loc VALUES (\"'+loc_id+'\",\"'+rows[0].user_id+'\");',
+                  // console.log('first_name: '+first_name);
+                  var user_id = rows[0].user_id;
+                  con.query('INSERT INTO user_loc VALUES (\"'+loc_id+'\",\"'+user_id+'\");',
                     function(err) {
                       if(err) throw err;
+                      
+                      // only for old people
+                      // con.query('SELECT ser_id FROM ')
+
                       // And forward to success page
-                      res.render('home', {username: first_name});
+                      // res.render('home', {fnname: first_name, user_id: user_id});
+                      res.redirect('/users/'+user_id+'?fname='+first_name);
+
                     }
                   );
                 }
@@ -130,14 +120,15 @@ router.post('/signup', function(req, res) {
                       var loc_id = rows[0].loc_id;
                       con.query('SELECT user_id, first_name FROM users WHERE email=\"'+useremail+'\";',
                         function(err, rows) {
-                          // var user_id = rows[0].user_id;
+                          var user_id = rows[0].user_id;
                           var first_name = rows[0].first_name;
                           console.log('first_name: '+first_name);
-                          con.query('INSERT INTO user_loc VALUES (\"'+loc_id+'\",\"'+rows[0].user_id+'\");',
+                          con.query('INSERT INTO user_loc VALUES (\"'+loc_id+'\",\"'+user_id+'\");',
                             function(err) {
                               if(err) throw err;
                               // And forward to success page
-                              res.render('home', {username: first_name});
+                              // res.render('home', {fnname: first_name});
+                              res.redirect('/users/'+user_id+'?fname='+first_name);
                             }
 
                           );
