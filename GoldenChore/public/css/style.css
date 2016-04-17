@@ -43,14 +43,6 @@ h3 {
 	font-weight: 100;
 	line-height: 15.4px;
 }
-h4 {
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-size: 24px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 100;
-	line-height: 15.4px;
-}
 p,h5,label {
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 14px;
@@ -83,8 +75,5 @@ input[type="text"],input[type="email"] ,input[type="password"]  {
     width: 200px;
 }
 .colorBlack{
-  color:black;
-}
-.clrLeft{
-  clear:left;
+        color:#000;
 }

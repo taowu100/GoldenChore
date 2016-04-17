@@ -11,7 +11,12 @@ router.get('/', function(req, res, next) {
   res.render('index', {expressFlash: req.flash('message') });
 });
 
-/* Login. */
+/* GET instruction */
+router.get('/instruction', function(req, res) {
+    res.render('tasklist');
+});
+
+/* Login */
 router.post('/login', function(req, res) {
 
     // Set our internal DB variable
@@ -153,7 +158,5 @@ router.post('/signup', function(req, res) {
     );
 
 });
-
-
 
 module.exports = router;

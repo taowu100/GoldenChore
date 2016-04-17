@@ -1,30 +1,92 @@
-<body>
-	
-	<h2>Welcome, <%= fname %></h2>
-	<div>
-		<a href="/addnewrequest/user/<%= user_id %>?fname=<%= fname %>">Post A New Service Request</a>
-	</div>
-	<h2>List Of My Task:</h2>
-	<% if (postedsers.length > 0) { %>
-		<ul>
-			<% postedsers.forEach(function(postedser) { %>
-	        	<li>
-	        		<div>ser_name: <%= postedser.ser_name %></div>
-	        		<div>ser_startingdate - ser_endingdate: <%= postedser.ser_startingdate %> - <%= postedser.ser_endingdate %></div>
-	        		<div>ser_ava_startingtime - ser_ava_endingtime: <%= postedser.ser_ava_startingtime %> - <%= postedser.ser_ava_endingtime %></div>
-	        		<div>hours: <%= postedser.hours_min %> - <%= postedser.hours_max %></div>
-	        		<div>ser_description: <%= postedser.ser_description %></div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Golden Chore</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12" style="background-color:#9F8524;margin-top:30px;margin:0;height:15px">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row" style="margin-top:20px">
+            <div class="col-md-6">
+               <a href="/home" class="btn pull-left" type="button">Golden Chore</a>
+            </div>
+            <div class="col-md-6">
+               <a href="/" class="btn pull-right" type="button">Login</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <h1 class="text-center">
+                GOLDEN CHORE
+              </h1>
+              <br/>
+              <p class="text-center">
+                Building a community by helping senior citizens
+              </p>
+              <br/>
+              <p style="margin-left:30px;margin-bottom:60px;font-size:20px;">Welcome, <%= fname %>:)</p>
+              <h3 style="margin:30px;">
+                TASKLIST&nbsp;
+                <a style="font-size:20px;" href="/addnewrequest/user/<%= user_id %>?fname=<%= fname %>">(Post New)</a>
+              </h3>
+              <% if (postedsers.length > 0) { %>
+                <% postedsers.forEach(function(postedser) { %>
+                  <div class="row" style="margin:30px;background-color:#fff">
+                    <div class="col-md-12">
+                      <div class="row">
+                        <div class="col-md-12" >
+                            <h4 class="colorBlack" style="margin:20px 0 20px 0;color:#000"><%= postedser.ser_name %></h4>
+                            <p class="colorBlack">Available From&nbsp;<%= postedser.ser_ava_startingtime %> <%= postedser.ser_startingdate_formated %> to <%= postedser.ser_ava_endingtime %> <%= postedser.ser_endingdate_formated %></p>
+                            <p class="colorBlack pull-left clrLeft">No. of hours:&nbsp;</p>
+                            <p style="margin-left:10px" class="colorBlack"><%= postedser.hours_min %> - <%= postedser.hours_max %></p>
+                            <p class="colorBlack clrLeft">Description:&nbsp;<%= postedser.ser_description %></p>
+                            <p class="colorBlack clrLeft">Service Type:&nbsp;<%= postedser.type %></p>
+                            <p class="colorBlack pull-left clrLeft">Service Address:&nbsp;<%= postedser.street_address %>, <%= postedser.city %>, <%= postedser.state %> <%= postedser.zip_code %></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <% }); %>
+              <% } else { %>
+                <div class="row" style="margin:30px;background-color:#fff">
+                  <div class="col-md-12">
+                    <div class="row">
+                      <div class="col-md-12" >
+                        <h4 class="colorBlack" style="margin:20px 0 20px 0;color:#000">You haven't any task posted.</h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% } %>
 
-	        		<div>service type: <%= postedser.type %></div>
-	        		<div>poster name(f+l): <%= postedser.first_name %> <%= postedser.last_name %></div>
-	        		<div>service address: <%= postedser.street_address %>, <%= postedser.city %>, <%= postedser.state %> <%= postedser.zip_code %></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 footer navbar-fixed-bottom"" style="background-color:#0D253D;margin-top:30px;">
+            <div class="row">
+              <div class="col-md-12" style="background-color:#9F8524;margin-top:30px;margin:0;height:15px">
+              </div>
+            </div>
+          </div>
+        </div>
 
-	        	</li>
-	        	<br>
-	    	<% }); %>
-		</ul>
-	<% } else { %>
-		<div>You didn't post any service.</div>
-	<% } %>
+    </div>
+  </div>
 
-</body>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/scripts.js"></script>
+  </body>
+</html>

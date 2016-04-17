@@ -1,47 +1,128 @@
-<body>
-	<h1>Hi, <%= fname %></h1>
-	<h1>post a new service request</h1>
-	
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Golden Chore</title>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12" style="background-color:#9F8524;margin-top:30px;margin:0;height:15px">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row" style="margin-top:20px">
+            <div class="col-md-6">
+               <a href="/home" class="btn pull-left" type="button">Golden Chore</a>
+            </div>
+            <div class="col-md-6">
+               <!-- <a href="#" class="btn pull-right" type="button">Sign UP</a> -->
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <h1 class="text-center">
+                GOLDEN CHORE
+              </h1>
+              <br/>
+              <p class="text-center">
+                Building a community by helping senior citizens
+              </p>
+              <br/>
+              <h3 style="margin:30px;">
+                Create a Task
+              </h3>
+              <label style="margin:-10px 0 10px 30px;" class="pull-left" >Complete and submit a task that you'd like completed by a volunteer</label>
+              <div class="col-md-12" style="background-color:#fff">
+                <hr/>
 
-	<form id="formAddReq" name="addrequest" method="post" action="/addnewrequest/postnew">
-		Service Name: <input id="inputReqName" type="text" placeholder="service name" name="ser_name">
-		<br>
-		Date and Time: 
-        <input id="inputReqStarDate" type="date" placeholder="starting date" name="ser_startingdate">
-        &nbsp;
-        <input id="inputReqStarTime" type="time" placeholder="starting time" name="ser_ava_startingtime">
-        --
-        <input id="inputReqEndDate" type="date" placeholder="ending date" name="ser_endingdate">
-        &nbsp;
-        <input id="inputReqEndTime" type="time" placeholder="ending time" name="ser_ava_endingtime">
-        <br>
-        Hours: 
-        <input id="inputHourMin" type="text" placeholder="min hours" name="hours_min">
-        --
-        <input id="inputHourMax" type="text" placeholder="max hours" name="hours_max">
-        <br>
-        Description:
-        <textarea rows="4" cols="50" placeholder="service description" name="ser_description"></textarea>
-        <br>
-        Service Type:
-        <select name="type_id">
-        	<% types.forEach(function(type) { %>
-            	<option value="<%= type.type_id %>"><%=  type.type %></option>
-            <% }); %>
-        </select>
-        <br>
-        Service Location:
-        <br>
-        Street: <input id="inputReqStreet" type="text" placeholder="street address" name="street_address">
-        <br>
-        City: <input id="inputReqName" type="text" placeholder="city" name="city">
-        <br>
-        State:  <input id="inputReqName" type="text" placeholder="state" name="state">
-        <br>
-        Zip code:  <input id="inputReqName" type="text" placeholder="zip code" name="zip_code">
-        <br>
-        <input type="hidden" name="user_id" value="<%= user_id %>">
-        <input type="hidden" name="fname" value="<%= fname %>">
-        <input id="btnSubmit" type="submit" value="Post">
-	</form>
-</body>
+                <form id="formAddReq" name="addrequest" method="post" action="/addnewrequest/postnew">
+
+        		  <label class="pull-left" style="color:#000" >Category&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <select style="color:#000;" name="type_id">
+                      <% types.forEach(function(type) { %>
+                        <option value="<%= type.type_id %>"><%=  type.type %></option>
+                      <% }); %>
+                    </select>
+                    <br/><br/>
+        				<p class="colorBlack">
+        					<label for="ser_name" class="youpasswd pull-left">Task Name </label>
+        					<input id="ser_name" style="margin-left:10px" class="pull-left" name="ser_name" required="required" type="text" placeholder=""/>
+        				</p>
+                    <br/><br/>
+        			<p class="colorBlack">
+                      <label style="margin-top:3px" class="pull-left">Date From</label>
+                      <input  style="margin:0 0 0 10px" class="pull-left" type="date" name="ser_startingdate">
+                      <input id="inputReqStarTime" class="pull-left" type="time" placeholder="starting time" name="ser_ava_startingtime">
+
+                      <label style="margin-top:3px;margin:0 0 0 10px" class="pull-left">Date To</label>
+                      <input  style="margin:0 0 0 10px" class="pull-left" type="date" name="ser_endingdate">
+                      <input id="inputReqEndTime" class="pull-left" type="time" placeholder="ending time" name="ser_ava_endingtime">
+                    </p>
+                    <br/><br/>
+                    <p class="colorBlack">
+                      <label style="margin-top:3px;margin-right:30px;" class="pull-left colorBlack">Hours</label>
+                      <input style="margin:0 0 0 10px;" id="inputHourMin" type="text" placeholder="min hours" name="hours_min">
+                      --
+                      <input style="margin:0" id="inputHourMax" type="text" placeholder="max hours" name="hours_max">
+                    </p>
+
+                    <p class="colorBlack">
+                    <label class="pull-left" style="margin-top:10px;">Service Location</label>
+                    <br>
+                    <br>
+        			<label class="pull-left" style="margin-left:28px;">Street</label>
+                    <input class="pull-left" style="margin-left:10px" id="inputReqStreet" type="text" placeholder="street address" name="street_address" required="required" >
+
+                    <label class="pull-left" style="margin-left:10px">City</label>
+                    <input class="pull-left" id="inputReqName" style="margin-left:10px" type="text" placeholder="city" name="city" required="required" >
+
+                    <label class="pull-left" style="margin-left:10px">State</label>
+                    <input class="pull-left" id="inputReqName" style="margin-left:10px" type="text" placeholder="state" name="state" required="required" >
+
+                    <label class="pull-left" style="margin-left:10px">Zip Code</label>
+                    <input class="pull-left" id="inputReqName" style="margin-left:10px" type="text" placeholder="zip code" name="zip_code" required="required" >
+        			</p>
+                    <br/><br/>
+                    <p class="colorBlack">
+                      <label style="margin-top:3px;margin-right:24px;" class="pull-left colorBlack">Details</label>
+        			  <textarea style="margin-left:10px;width:500px" class="pull-left" required="required" type="text" placeholder="service description" name="ser_description"></textarea>
+        			</p>
+                    <br/><br/><br/>
+        			<p class="signin button colorBlack">
+                      <input type="hidden" name="user_id" value="<%= user_id %>">
+                      <input type="hidden" name="fname" value="<%= fname %>">
+        			  <input type="submit" class="btn" value="Register"/>
+                      <a href="/users/<%= user_id %>?fname=<%= fname %>" class="btn" type="button">Back</a>
+        			</p>
+
+                <br/><br/><br/><br/><br/>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 footer navbar-fixed-bottom" style="background-color:#0D253D;margin-top:30px;">
+          <div class="row">
+            <div class="col-md-12" style="background-color:#9F8524;margin-top:30px;margin:0;height:15px">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/scripts.js"></script>
+  </body>
+</html>
