@@ -30,7 +30,7 @@ Open the particular link in your browser. (Note: [link to homepage on the defaul
 
 ### Features
 
- - Login & Sign-up
+ - Login & sign-up
  - Check "my requests/tasks"
  - Post a new service/chore request/task
  - Some instructions
@@ -44,5 +44,5 @@ Open the particular link in your browser. (Note: [link to homepage on the defaul
  - Map view
  - More instructions
  - Make links more secure
- - Add Code Comments
+ - Add code comments
  - More features for young people
