@@ -2,6 +2,8 @@
 
 Golden Chore is an application to match young people and old people so that young people can help old people do chores or other stuff. It has both web and mobile ends. Currently, the web end mainly targets old people. Here is code for web side.
 
+It is developed on node 5.9.1 & npm 3.7.3.
+
 [link to GitHub repository](https://github.com/taowu100/GoldenChore)
 
 ### Implementation
